@@ -1,0 +1,292 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" contents="IE-edge">
+    <meta name="viewport" contents="width=device-width, initial-scale=1.0">
+    <title>WebSyst</title>
+<link rel="stylesheet" href="new.css">
+<script src="https://kit.fontawesome.com/6d7a7200e6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+ <!-- Modal Overlay -->
+ <div class="modal-overlay">
+    <div class="modal-content">
+        <img src="" alt="Enlarged Image" id="enlargedImage">
+    </div>
+</div>
+
+
+
+
+<div id="header">
+<div class="container">
+<nav>
+
+    
+    <img src="images/logo.png" class="logo">
+    <ul id="sidemenu">
+        <li><a href="#header">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#Portfolio">PORTFOLIO</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <i class="fa-solid fa-circle-xmark" onclick="closemenu()" style='color:black;'></i>
+    </ul>
+    <i class="fa-solid fa-bars" onclick="openmenu()" ></i>
+</nav>
+<div class="header-text">
+    <p>Web designer</p>
+    <h1>Hi, I'm <span>Kyle</span></h1>
+</div>
+</div>
+</div>
+<!-----------------about------------->
+
+<div id="about">
+ <div class="container">
+    <div class="row">
+        <div class="about-col-1">
+           <img src="images/im.jpg"  > 
+        </div>
+            <div class="about-col-2">
+<h1 class="sub-title">About Me</h1>
+            <p> &nbsp;&nbsp;My name is Kyle Martin, currently a 2nd year college student in Rizal Technological University under the course of Bachelor of Science in information Technology.            
+            Even though my skills are lacking compared to my peers, I aspire to be a web developer and Game developer</p>
+
+
+            <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('Skills')"> Skills</p> 
+                <p class="tab-links "   onclick="opentab('Education')"> Education</p> 
+                <p class="tab-links "   onclick="opentab('Experience')"> Experience</p>
+            </div>
+            <div class="tab-contents   active-tab" id="skills">
+<Ul>
+    <li><span>Photography</span></li>
+    <br>
+    <li><span>Web Development</span></li>
+    
+</Ul>
+            </div>
+            <div class="tab-contents" id="Education">
+                <Ul>
+                    <li><span>2009-2016</span> <br>TEES</li>
+                    <li><span>2016-2020</span> <br>MHS</li>
+                    <li><span>2020-2022</span> <br> AUPC</li>
+                    <li><span>2022-2025</span> <br>RTU </li>
+                </Ul>
+           </div>
+
+           <div class="tab-contents" id="Experience">
+            <Ul>
+                <li><span>NONE</span> <br>As of now, i have no work experience</li>
+            
+            </Ul>
+         </div>
+       
+     </div>
+    </div>
+ 
+
+ </div>   
+</div>
+
+<!----------portfolio---------------------------------------------------->
+<div id="Portfolio">
+<div class="container"></div>
+<h1 class="sub-title">My personal portfolio</h1>
+<div class="work-list">
+    
+    <div class="work">
+        <a href="images/moon.jpg" class="image-link">
+            <img src="images/moon.jpg" >
+        </a>
+        <div class="layer animated">
+            <h3>Moon</h3>
+            <p>Lunaria</p>
+            <a href="#"><i class="fa-solid fa-moon"></i></a>
+    </div>
+</div>
+
+<div class="work">
+    <a href="images/sun.jpg" class="image-link">
+        <img src="images/sun.jpg">
+    </a>
+    <div class="layer animated">
+        <h3>Sun</h3>
+        <p>Solaria</p>
+        <a href="#"><i class="fa-regular fa-sun"></i></a>
+    </div>
+</div>
+
+<div class="work">
+    <a href="images/nat.jpg" class="image-link">
+        <img src="images/nat.jpg">
+    </a>
+    <div class="layer animated">
+        <h3>Nature</h3>
+        <p>Beauty</p>
+        <a href="#"><i class="fa-solid fa-leaf"></i></a>
+    </div>
+</div>
+
+</div>
+
+<a href="#" class="btn">See more</a>
+
+</div>
+</div>
+
+<!------------------------contact-------------------------->
+
+<div id="contact">
+  <div class="container">
+    <div class="row">
+        <div class="contact-left">
+            <h1 class="sub-title">Contact Info</h1>
+            <p><i class="fa-solid fa-paper-plane"></i>kyle.martingayoso@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i>09482643638</p>
+            <div class="social-icons">
+               <a href="https://www.facebook.com/kylemartin.gayoso"><i class="fa-brands fa-facebook"></i></a> 
+               <a href="https://www.instagram.com/kfine12345?igshid=YTQwZjQ0NmI0OA=="><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="images/Resume.jpg" download class="btn btn2">Download Resume</a>
+        </div>
+            <div class="contact-right">
+<form name="submit-to-google-sheet">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Email" required>
+    <textarea name="Message" rows="6" placeholder="Thy message"></textarea>
+    <button type="submit" class="btn btn2">Submit</button>
+</form>
+        <span id="msg"></span>  
+        </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>All rights reserved<i class="fa-solid fa-user"></i></p>
+  </div>
+</div>
+
+<script>
+
+var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname) {
+    for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+    }
+
+    for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link"); // Added the 'event' parameter
+    document.getElementById(tabname).classList.add("active-tab");
+}
+
+/*
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+
+            var clickedTab = document.getElementById(tabname);
+
+            if (clickedTab) {
+                event.currentTarget.classList.add("active-link");
+                clickedTab.classList.add("active-tab");
+            }
+        }
+        */
+    </script>
+
+    <!-- Script for Side Menu -->
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu() {
+            sidemenu.style.right = "0";
+        }
+
+        function closemenu() {
+            sidemenu.style.right = "-200px";
+        }
+    </script>
+
+    <!-- Script for Google Sheet Submission -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxsJ3ua_NdOAK14zIejzVVQ3CLZV7-X8vr3xK5dmafoZu5wuLV8y7jwIMXhZvdzUrGG/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message sent successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = " "
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+    <!-- Script for Animated Layer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    var workItems = document.querySelectorAll('.work');
+    
+    workItems.forEach(function (workItem) {
+        workItem.addEventListener('click', function () {
+            var layer = this.querySelector('.layer');
+            if (layer) {
+                layer.classList.toggle('animated');
+            }
+        });
+    });
+});
+
+function closeModal() {
+    document.querySelector('.modal-overlay').style.display = 'none';
+}
+
+function nextImage() {
+    // Add logic to change the image in the modal if needed
+}
+
+    </script>
+
+    <!-- Script for Image Modal -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var imageLinks = document.querySelectorAll('.image-link');
+            var modalOverlay = document.querySelector('.modal-overlay');
+            var modalContent = document.querySelector('.modal-content');
+
+            imageLinks.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    var imageUrl = this.getAttribute('href');
+                    modalContent.innerHTML = '<img src="' + imageUrl + '" alt="Enlarged Image">';
+                    modalOverlay.style.display = 'flex';
+                });
+            });
+
+            modalOverlay.addEventListener('click', function () {
+                modalOverlay.style.display = 'none';
+            });
+        });
+  </script>
+</body>
+</html>
